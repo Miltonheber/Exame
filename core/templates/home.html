@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+<section class="container">
+    {% block content %}
+        <div class="card" id="cartao" style="width: 75vw;">
+  <div class="card-body">
+    <h5 class="card-title">Bem vindo ao Marrar</h5>
+        <p class="card-text">Bem-vindo ao "Marrar" - o seu parceiro de estudos confiável!
+    
+    No Marrar, a nossa missão é facilitar o seu caminho para o sucesso acadêmico. Acreditamos que o acesso fácil a exames passados é essencial para uma preparação eficaz. Nossa plataforma oferece uma extensa coleção de exames anteriores, proporcionando uma visão abrangente dos padrões de avaliação.
+    </p>
+    <a href="{% url 'options' %}" class="btn btn-primary">Baixar Exames</a>
+  </div>
+</div>
+    {% endblock %}
+</section>

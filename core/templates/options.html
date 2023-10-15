@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}Opções{% endblock %}
+
+{% block content %}
+<main class="lista container">
+    <div class="card">
+      <h5 class="card-title" style="text-align:center; margin-top:16px;">Selecione uma opção</h5>
+      <div class="card-body">
+        <div class="list-group">
+  <a href="{% url 'form' 1 %}" class="list-group-item list-group-item-action"> Admissão Superior</a>
+  
+  <a href="{% url 'form' 2%}" class="list-group-item list-group-item-action">Admissão Médio</a>
+  <a href="{% url 'form' 3 %}" class="list-group-item list-group-item-action"><i class="fa-regular fa-school"></i> Ensino Geral 10°&12°</a>
+</div>
+      </div>
+    </div>
+</main>
+
+{% endblock %}

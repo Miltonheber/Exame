@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Opções{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="card">
+        <div class="card-body">
+            <form class="" action="" method="post" accept-charset="utf-8">
+                {% csrf_token %}
+                {% if id == 1 %}
+                    <h3 class="form-h3">Ensino Superior</h3>
+                    {{superior|crispy}}
+                {% elif id == 2 %}
+                    <h3 class="form-h3">Ensino Médio</h3>
+                    {{medio|crispy}}
+                {% elif id == 3 %}
+                    <h3 class="form-h3">Ensino Geral</h3>
+                    {{geral|crispy}}
+                {% else %}
+                    <div class=" alert alert-primary form-error">Algo ocorreu errado!</div>
+                {% endif %}
+                <div style="display:flex; justify-content:space-around;">
+                <button type="submit" class="btn btn-success">Baixar</button>
+                <a href="{% url 'home' %}"  class="btn btn-primary">Voltar</a>
+            </form>
+            
+        </div>
+        
+    </div>
+</main>
+
+{% endblock %}
