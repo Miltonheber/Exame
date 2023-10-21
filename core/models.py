@@ -58,6 +58,17 @@ universidades = [
     ('NÁUTICA', 'NÁUTICA')
     
 ]
+entidades = [
+    ('UEM','UEM'),
+    ('UP','UP'),
+    ('UJC','UJC'),
+    ('ISISA','ISISA'),
+    ('NÁUTICA', 'NÁUTICA'),
+    ('INSTITUTO INDUSTRIAL','INSTITUTO INDUSTRIAL'),
+    ('INSTITUTO COMERCIAL','INSTITUTO COMERCIAL'),
+    
+    
+]
 
 class Ano(models.Model):
     ano = models.CharField(
@@ -71,7 +82,7 @@ class Ano(models.Model):
 class Editais(models.Model):
     ano = models.ForeignKey(Ano, on_delete=models.DO_NOTHING)
     tipo = models.CharField('tipo', null=False, max_length=10, default='edital')
-    instituicao = models.CharField('instituicao',max_length=20, null=False)
+    instituicao = models.CharField('instituicao',max_length=30, null=False, choices=entidades)
     pdf = models.FileField(null=False, upload_to='editais')
     
     def __str__(self):

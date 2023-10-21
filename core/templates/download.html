@@ -27,7 +27,18 @@
         </div>
         </div>
         {% else %}
-            <h2>eh aqui papai</h2>
+            <div class="container">
+                <h5 class="card-title edital-h5" >Baixar edital {{edital.instituicao}} de {{edital.ano}}</h5>
+                <div class="card" id="cartao" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'icones/document.png' %}" alt="Card image cap">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Ano</strong>: {{edital.instituicao}}</li>
+                        <li class="list-group-item"><strong>Disciplina</strong>: {{edital.ano}}</li>
+                    </ul>
+                    <div class="card-body"><a class="btn btn-success" href="{{ edital.pdf.url }}" download>Baixar</a>
+                    </div>
+                    </div>
+            </div>
         {% endif %}
     {% else %}
         <div class="alert alert-primary erro">{{erro}}</div>

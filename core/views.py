@@ -23,6 +23,7 @@ def form(request, id):
         'superior':examesup,
         'medio':examemed,
         'geral':examegeral,
+        'editais':editais
     }
 
     if request.method == 'POST':
@@ -35,14 +36,14 @@ def form(request, id):
         elif nivel == 'Ensino Geral':
             return redirect(f"/download/?nivel={nivel}&ano={d.get('ano')}&epoca={d.get('epoca')}&disciplina={d.get('disciplina')}&classe={d.get('classe')}")
         else:
-            return redirect(f"/download/?tipo={d['tipo']}&ano={d.get('ano')}&instituicao={d.get('instituicao')}")
+            tipo = 'edital'
+            return redirect(f"/download/?tipo={tipo}&ano={d.get('ano')}&instituicao={d.get('instituicao')}")
+        print(d.get('tipo'))
 
         print(nivel)
     return render(request, 'form.html', contexto)
 
 def download(request):
-
-
     dados = request.GET
     ano = dados.get('ano')
     disciplina = dados.get('disciplina')
@@ -51,7 +52,7 @@ def download(request):
     tipo = dados.get('tipo')
     if tipo == 'edital':
         try:
-            edital = Edital.objects.get(
+            edital = Editais.objects.get(
                 ano = ano,
                 instituicao = instituicao
             )

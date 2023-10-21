@@ -7,6 +7,9 @@ body {
     flex-direction: column;
     justify-content:space-between;
 }
+.edital-h5{
+    margin-top:10px;
+}
 .menu {
     margin-bottom: 20px;
 }
