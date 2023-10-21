@@ -68,6 +68,15 @@ class Ano(models.Model):
 
     def __str__(self):
         return self.ano
+class Editais(models.Model):
+    ano = models.ForeignKey(Ano, on_delete=models.DO_NOTHING)
+    tipo = models.CharField('tipo', null=False, max_length=10, default='edital')
+    instituicao = models.CharField('instituicao',max_length=20, null=False)
+    pdf = models.FileField(null=False, upload_to='editais')
+    
+    def __str__(self):
+        return f'Edital {self.instituicao} de {self.ano}'
+
     
 class ExameSup(models.Model):
 

@@ -27,4 +27,9 @@ class ExameGeralForm(ModelForm):
         fields = '__all__'
         exclude = ('pdf',)
 
+class Editaisform(ModelForm):
+    class Meta:
+        model = Editais
+        fields = '__all__'
+        exclude = ['pdf','tipo']
 

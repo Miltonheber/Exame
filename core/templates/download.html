@@ -5,26 +5,30 @@
 
 
 {% block content %}
-    {% if exame %}
-        <div class="card" id="cartao" style="width: 18rem;">
-  <img class="card-img-top" src="{% static 'icones/document.png' %}" alt="Card image cap">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>Ano</strong>: {{exame.ano}}</li>
-    <li class="list-group-item"><strong>Disciplina</strong>: {{exame.disciplina}}</li>
-    <li class="list-group-item">
-        {% if exame.nivel == 'Ensino Superior' %}
-            <strong>Instituição</strong>: {{exame.Instituicao}}
-        {% elif exame.nivel == 'Ensino Geral' %}
-            <strong>Época</strong>: {{exame.epoca}}
-        {% elif exame.nivel == 'Ensino Tecníco' %}
-            <strong>Nível</strong>: {{exame.nivel}}
+    {% if exame or edital %}
+        {% if exame %}
+                <div class="card" id="cartao" style="width: 18rem;">
+        <img class="card-img-top" src="{% static 'icones/document.png' %}" alt="Card image cap">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Ano</strong>: {{exame.ano}}</li>
+            <li class="list-group-item"><strong>Disciplina</strong>: {{exame.disciplina}}</li>
+            <li class="list-group-item">
+                {% if exame.nivel == 'Ensino Superior' %}
+                    <strong>Instituição</strong>: {{exame.Instituicao}}
+                {% elif exame.nivel == 'Ensino Geral' %}
+                    <strong>Época</strong>: {{exame.epoca}}
+                {% elif exame.nivel == 'Ensino Tecníco' %}
+                    <strong>Nível</strong>: {{exame.nivel}}
+                {% endif %}
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="{{exame.pdf.url}}" download  class="btn btn-primary">Baixar <i class="fa-light fa-download"></i> </a>
+        </div>
+        </div>
+        {% else %}
+            <h2>eh aqui papai</h2>
         {% endif %}
-    </li>
-  </ul>
-  <div class="card-body">
-    <a href="{{exame.pdf.url}}" download  class="btn btn-primary">Baixar <i class="fa-light fa-download"></i> </a>
-  </div>
-</div>
     {% else %}
         <div class="alert alert-primary erro">{{erro}}</div>
         <a href="{% url 'options' %}" class="btn btn-primary">Voltar</a>

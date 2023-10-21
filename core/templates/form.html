@@ -18,6 +18,9 @@
                 {% elif id == 3 %}
                     <h3 class="form-h3">Ensino Geral</h3>
                     {{geral|crispy}}
+                {% elif id == 4 %}
+                    <h3 class="form-h3">Editais</h3>
+                    {{editais|crispy}}
                 {% else %}
                     <div class=" alert alert-primary form-error">Algo ocorreu errado!</div>
                 {% endif %}

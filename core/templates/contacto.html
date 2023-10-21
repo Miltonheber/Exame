@@ -4,8 +4,30 @@
 {% block title %}Contacto{% endblock %}
 
 {% block content %}
-    <section class="container">
-        <h2 class="">Formulario de Contacto</h2>
+    <section class="container card">
+        <div class="card-body">
+            <h2 class="">Formulario de Contacto</h2>
+            <form method="POST"> {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Nome</label>
+                <input name="nome" type="text" class="form-control" id="exampleFormControlInput1" placeholder="nome">
+              </div> 
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email</label>
+                  <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email">
+                </div>  
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Assunto</label>
+                  <input name="assunto" type="text" class="form-control" id="exampleFormControlInput1" placeholder="assunto">
+                </div> 
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Mensagem</label>
+                  <textarea  name="msg" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submeter</button>
+              </form>
+        </div>
+        
     </section>
 
 {% endblock %}
