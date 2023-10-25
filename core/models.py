@@ -120,7 +120,7 @@ class ExameSup(models.Model):
     )
 
     def __str__(self):
-        return f'{self.instituição}-{self.disciplina}-{self.ano}'
+        return f'{self.instituicao}-{self.disciplina}-{self.ano}'
 
 
 class ExameMed(models.Model):

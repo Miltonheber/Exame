@@ -9,7 +9,17 @@ body {
 }
 .edital-h5{
     margin-top:10px;
+    
 }
+.cartao-2{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
 .menu {
     margin-bottom: 20px;
 }
@@ -17,12 +27,21 @@ body {
 #rodape {
     height: 20vh;
 
-    
+
+
+}
+.cartao-1{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
 
 }
 #cartao{
-    margin-top:20px;
-    margin-bottom: 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
 
 }
 .footer{
