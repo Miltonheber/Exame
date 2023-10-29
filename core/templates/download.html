@@ -23,12 +23,12 @@
                     {% endif %}
                 </li>
             </ul>
-            <div class="card-body" style="display:flex; justify-content:space-around;">
-                <a href="{{exame.pdf.url}}" download  class="btn btn-primary">Baixar</a><a href="{% url 'home' %}"  class="btn btn-primary">Voltar</a>
-
+            <div class="card-body">
+                <a href="{{exame.pdf.url}}" download  class="btn btn-primary">Baixar</a>
+		        <a href="{% url 'options' %}"  class="btn btn-success">Voltar</a>
             </div>
-            </div>
-    </div>
+            </div>  
+        </div>
         {% else %}
             <div class="container cartao-2">
                 <h5 class="card-title edital-h5" >Baixar edital {{edital.instituicao}} de {{edital.ano}}</h5>
@@ -38,7 +38,10 @@
                         <li class="list-group-item"><strong>Ano</strong>: {{edital.instituicao}}</li>
                         <li class="list-group-item"><strong>Disciplina</strong>: {{edital.ano}}</li>
                     </ul>
-                    <div class="card-body"><a class="btn btn-success" href="{{ edital.pdf.url }}" download>Baixar</a></div>
+                    <div class="card-body">
+			<a class="btn btn-success" href="{{ edital.pdf.url }}" download>Baixar</a>
+			<a href="{% url 'options' %}"  class="btn btn-primary">Voltar</a>
+		    </div>
                 </div>
             </div>
         {% endif %}
